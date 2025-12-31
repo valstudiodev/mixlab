@@ -1,0 +1,211 @@
+@use "sass:math";
+@use './settings/settings' as *;
+@use './settings/_mixins.scss' as *;
+
+.components {
+
+   // .components__container
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: toRem(50);
+      padding-top: toRem(50);
+   }
+
+   // .components__item
+   &__item {}
+}
+
+// ===========================================================================================
+// -----------------------------
+// Buttons-active
+// -----------------------------
+.icon-menu {
+   position: relative;
+   width: toRem(30);
+   height: toRem(20);
+   z-index: 10;
+   flex-shrink: 0;
+
+   &::before,
+   &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: toRem(3);
+      border-radius: toRem(10);
+      background-color: $colorAccent;
+      transition: all 0.3s;
+   }
+
+   &::before {
+      top: 0;
+   }
+
+   &::after {
+      bottom: 0;
+   }
+
+   span {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      translate: 0 -50%;
+      background-color: $colorAccent;
+      width: 70%;
+      height: toRem(3);
+      border-radius: toRem(10);
+      transition: all 0.3s;
+   }
+
+   @media (min-width: toEm(855.98)) {
+      display: none;
+   }
+}
+
+.menu-open {
+   .icon-menu {
+      &::before {
+         top: 50%;
+         rotate: 45deg;
+         translate: 0 -50%;
+      }
+
+      &::after {
+         top: 50%;
+         rotate: -45deg;
+         translate: 0 -50%;
+      }
+
+      span {
+         width: 0;
+      }
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// Button
+// -----------------------------
+.button {
+   font-weight: 700;
+   color: $white;
+   background-color: $purpleDark;
+   padding-block: toRem(14);
+   padding-inline: toRem(40);
+   border-radius: toRem(24);
+   text-transform: capitalize;
+   line-height: 118.75%; /* 19/16 */
+   letter-spacing: toRem(0.2);
+   border: toRem(1) solid $purpleDark;
+   transition: all 0.3s;
+
+   &--small {
+      padding-block: toRem(9);
+      padding-inline: toRem(35);
+   }
+
+   @include hover {
+     background-color: transparent;
+     color: $purpleDark;
+   }
+}
+
+.title {
+   font-size: toRem(14);
+   text-transform: uppercase;
+   color: $purpleLight;
+}
+
+.icon-more {
+   position: relative;
+   width: toRem(15);
+   height: toRem(15);
+   z-index: 10;
+   flex-shrink: 0;
+
+   &.icon-active {
+      &::after {
+         transform: translateX(0) rotate(-90deg);
+      }
+   }
+
+   &::before,
+   &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      background-color: $purpleLight;
+      height: toRem(2);
+      border-radius: toRem(6);
+      transition: transform 0.3s ease;
+   }
+   &::before {
+      left: 0;
+      top: 50%;
+      translate: 0 -50%;
+   }
+   &::after {
+      rotate: 90deg;
+      top: 50%;
+      translate: 0 -50%;
+   }
+
+   @media (min-width: toEm(444.98)) {
+     display: none;
+   }
+}
+
+.item-review {
+   background-color: $colorBlue;
+   border-radius: toRem(20);
+   // .item-review__inner
+   &__inner {
+      display: flex;
+      align-items: center;
+      @include adaptiveValue('column-gap', 40, 20);
+      @include adaptiveValue('padding-block', 58, 25);
+      @include adaptiveValue('padding-inline', 40, 20);
+
+      @media (max-width: toEm(730)) {
+        align-items: flex-start;
+      }
+      @media (max-width: toEm(520)) {
+        flex-direction: column;
+        gap: toRem(20);
+      }
+   }
+
+   // .item-review__logo
+   &__logo {
+      width: toRem(238);
+      @include adaptiveValue('width',238, 150);
+      aspect-ratio: 1;
+   }
+
+   // .item-review__content
+   &__content {
+      max-width: toRem(709);
+      blockquote {
+         @include adaptiveValue('font-size', 16, 12);
+         margin-bottom: toRem(8);
+      }
+   }
+
+   // .item-review__author
+   &__author {
+      display: flex;
+      align-items: center;
+      gap: toRem(16);
+
+      &::before {
+         color: $colorAccent;
+         font-size: toRem(22);
+      }
+   }
+}
+
+

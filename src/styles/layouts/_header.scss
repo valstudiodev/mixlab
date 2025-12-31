@@ -1,0 +1,162 @@
+@use '../settings/settings' as *;
+@use '../settings/mixins' as *;
+
+
+.header {
+   // display: none;
+   padding-block: toRem(25);
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 100;
+   transition: all 0.3s;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $white;
+      backdrop-filter: blur(10px);
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: all 0.3s;
+   }
+
+   &.scrolled {
+      &::before {
+         background: $bgLight;
+         backdrop-filter: blur(20px);
+      }
+   }
+
+   // .header__container
+   &__container {}
+
+   &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include adaptiveValue('gap', 30, 15);
+   }
+
+   &__logo {
+      z-index: 10;
+   }
+
+   // .header__menu
+   &__menu {
+      // delete
+      // flex-grow: 1;
+   }
+}
+
+.buttons-active {
+   display: flex;
+   align-items: center;
+   @include adaptiveValue('gap', 33, 10);
+   z-index: 10;
+
+   @media (max-width: toEm(493)) {
+     display: none;
+   }
+
+   // .buttons-active__login
+   &__login {
+      position: relative;
+      color: $purpleDark;
+      font-size: toRem(14);
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $purpleDark;
+        height: toRem(1);
+        width: 0;
+        transition: width 0.3s;
+      }
+
+      @include hover {
+        &::after {
+         width: 100%;
+        }
+      }
+   }
+
+   // .buttons-active__try
+   &__try {}
+}
+
+.menu-header {
+
+   @media (max-width: toEm(855)) {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: $purpleDark;
+      padding: toRem(120) toRem(15) toRem(30) toRem(15);
+      transition: all 0.3s;
+
+      .menu-open & {
+         right: 0;
+      }
+
+      &::before {
+         content: "";
+         position: fixed;
+         top: 0;
+         right: -100%;
+         width: 100%;
+         min-height: toRem(81);
+         background-color: $white;
+         transition: all 0.3s;
+
+         .menu-open & {
+            right: 0;
+         }
+      }
+   }
+
+   // .menu-header__list
+   &__list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      @include adaptiveValue('gap', 33, 10);
+
+      @media (max-width: toEm(855)) {
+         display: flex;
+         flex-direction: column;
+         gap: toRem(30);
+         // align-items: center;
+         align-items: flex-end;
+      }
+   }
+
+   // .menu-header__item
+   &__item {
+      font-size: toRem(14);
+      @media (max-width: toEm(855)) {
+        color: $white;
+        font-size: toRem(24);
+      }
+   }
+
+   // .menu-header__link
+   &__link {
+      transition: all 0.3s;
+      @include hover {
+        color: $purpleDark;
+      }
+   }
+}
+
+
+
