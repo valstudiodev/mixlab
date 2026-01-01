@@ -135,15 +135,13 @@ mq.addEventListener('change', setupAccordions);
 // icon-more
 // -----------------------------
 function showList() {
-   const items = document.querySelectorAll('.body-footer__column');
+   const footer = document.querySelector('.body-footer');
+   if (!footer) return;
 
-   items.forEach(item => {
-      const icon = item.querySelector('.icon-more');
-      // const wrap = item.querySelector('.column-menu__list');
+   footer.addEventListener('click', (e) => {
+      const icon = e.target.closest('.icon-more');
+      if (!icon) return;
 
-      icon.addEventListener('click', () => {
-         icon.classList.toggle('icon-active');
-         // wrap.classList.toggle('open');
-      });
+      icon.classList.toggle('icon-active');
    });
 }

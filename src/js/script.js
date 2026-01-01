@@ -18,7 +18,7 @@ function initApp() {
    initAnimations()
    movementElements()
    // formUtils()
-   // initUtils()
+   initUtils()
 }
 
 if (document.readyState === 'loading') {
