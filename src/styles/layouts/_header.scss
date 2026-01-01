@@ -60,7 +60,9 @@
    z-index: 10;
 
    @media (max-width: toEm(493)) {
-     display: none;
+      flex-direction: column;
+      gap: toRem(20);
+      justify-content: center;
    }
 
    // .buttons-active__login
@@ -135,8 +137,10 @@
          display: flex;
          flex-direction: column;
          gap: toRem(30);
-         // align-items: center;
-         align-items: flex-end;
+         align-items: center;
+      }
+      @media (max-width: toEm(493)) {
+         margin-bottom: toRem(30);
       }
    }
 

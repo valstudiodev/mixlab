@@ -169,7 +169,14 @@ address {
 }
 @media (max-width: 30.8125em) {
   .buttons-active {
-    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1.25rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 .buttons-active__login {
@@ -257,9 +264,14 @@ html[data-input=mouse] .buttons-active__login:hover::after {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 1.875rem;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media (max-width: 30.8125em) {
+  .menu-header__list {
+    margin-bottom: 1.875rem;
   }
 }
 .menu-header__item {

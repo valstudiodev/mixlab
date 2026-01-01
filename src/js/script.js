@@ -6,6 +6,7 @@ import { initEffects } from './effects';
 import { formUtils } from './formUtils';
 import { initUtils } from './initUtils';
 import { initAnimations } from './initAnimation'
+import { movementElements } from './movingElements';
 // ===========================================================================================
 // -----------------------------
 // ГОЛОВНИЙ ЗАПУСК
@@ -15,9 +16,9 @@ function initApp() {
    initDropdowns()
    initEffects()
    initAnimations()
-   // movingElements()
+   movementElements()
    // formUtils()
-   initUtils()
+   // initUtils()
 }
 
 if (document.readyState === 'loading') {
