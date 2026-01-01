@@ -9,7 +9,7 @@
    line-height: 1.2;
 }
 
-.footer-header {
+.column-footer {
    display: flex;
    align-items: center;
    gap: toRem(10);
@@ -17,6 +17,107 @@
    @media (max-width: toEm(444)) {
      width: 100%;
      justify-content: space-between;
+   }
+
+   &__title {
+      line-height: 1.2;
+   }
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: toRem(6);
+
+      transition: height 0.35s ease;
+      will-change: height;
+
+      @media (max-width: toEm(444)) {
+         height: 0;
+         overflow: hidden;
+         // align-items: flex-start;
+         // width: 50%;
+      }
+
+      @media (min-width: toEm(444.98)) {
+         height: auto !important;
+         overflow: visible;
+      }
+   }
+
+   &__link,
+   &__email,
+   &__phone {
+      transition: color 0.3s;
+
+      &--address {
+         max-width: toRem(170);
+      }
+
+      @include hover {
+         color: $purpleLight;
+      }
+   }
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: toRem(15);
+
+      transition: height 0.35s ease;
+      will-change: height;
+
+      @media (max-width: toEm(444)) {
+         height: 0;
+         overflow: hidden;
+         // align-items: flex-start;
+         // width: 50%;
+      }
+
+      @media (min-width: toEm(444.98)) {
+         height: auto !important;
+         overflow: visible;
+      }
+   }
+
+   &__wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: toRem(15);
+   }
+
+   &__label {
+      color: $purpleLight;
+      text-transform: uppercase;
+      font-size: toRem(12);
+   }
+
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: toRem(8);
+      width: 100%;
+   }
+
+   &__schedule {
+      tbody {
+         display: flex;
+         gap: toRem(5);
+      }
+
+      tr {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+
+         @media (max-width: toEm(444)) {
+            align-items: center;
+            gap: toRem(5);
+         }
+      }
    }
 }
 
@@ -44,107 +145,16 @@
    }
 }
 
-.column-menu {
-
-   // .column-menu__title
-   &__title {
-      line-height: 1.2;
-   }
-
-   // .column-menu__list
-   &__list {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: toRem(6);
-   }
-
-   // .column-menu__item
-   &__item {}
-
-   // .column-menu__link
-   &__link {}
-}
-
-.column-contacts {
-
-   // .column-contacts__title
-   &__title {}
-
-   // .column-contacts__phone
-   &__phone {}
-
-   // .column-contacts__wrap
-   &__wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: toRem(15);
-   }
-
-   // .column-contacts__label
-   &__label {
-      color: $purpleLight;
-      text-transform: uppercase;
-      font-size: toRem(12);
-   }
-
-   // .column-contacts__email
-   &__email {}
-}
-
-.column-address {
-
-   // .column-address__title
-   &__title {}
-
-   // .column-address__address
-   &__address {
-      max-width: toRem(170);
-   }
-
-   // .column-address__schedule
-   &__schedule {
-
-      tbody {
-         display: flex;
-         gap: toRem(5);
-      }
-
-      tr {
-         display: flex;
-         flex-direction: column;
-         align-items: flex-start;
-
-         @media (max-width: toEm(444)) {
-           align-items: center;
-         gap: toRem(5);
-         }
-      }
-   }
-}
-
 .column-social {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: toRem(25);
+   max-width: toRem(150);
 
-   // .column-social__title
-   &__title {}
-
-   // .column-social__items
-   &__items {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: toRem(25);
-      max-width: toRem(150);
-
-      @media (max-width: toEm(444)) {
-        gap: toRem(10);
-      }
+   @media (max-width: toEm(444)) {
+      gap: toRem(10);
    }
-
-   // .column-social__item
-   &__item {}
-
    // .column-social__link
    &__link {
       font-size: toRem(24);
@@ -200,44 +210,3 @@
    }
 }
 
-.column-menu__link,
-.column-contacts__email,
-.column-contacts__phone,
-.column-address__link {
-   transition: color 0.3s;
-
-   @include hover {
-     color: $purpleLight;
-   }
-}
-
-
-.column-contacts__wrapper,
-.column-address__wrapper {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   gap: toRem(15);
-}
-
-.column-contacts__wrapper,
-.column-address__wrapper,
-.column-menu__list {
-   // display: flex;
-   // flex-direction: column;
-   // gap: toRem(13);
-   transition: height 0.35s ease;
-   will-change: height;
-
-   @media (max-width: toEm(444)) {
-      height: 0;
-      overflow: hidden;
-      // align-items: flex-start;
-      // width: 50%;
-   }
-
-   @media (min-width: toEm(444.98)) {
-      height: auto !important;
-      overflow: visible;
-   }
-}

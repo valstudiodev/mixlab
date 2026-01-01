@@ -111,8 +111,8 @@
          <section class="page__work work">
             <div class="work__container">
                <h2 class="work__title">How it works</h2>
-               <div class="work__body">
-                  <article class="work__item item-work">
+               <div class="work__body work__body--anim" data-threshold="0.1" data-delay="200" data-step="200">
+                  <article class="work__item item-work anim-child">
                      <figure class="item-work__image item-work__image--parrot">
                         <img src="/src/assets/img/png/parrot.webp" alt="parrot image">
                      </figure>
@@ -123,7 +123,7 @@
                         </p>
                      </div>
                   </article>
-                  <article class="work__item item-work">
+                  <article class="work__item item-work anim-child">
                      <figure class="item-work__image item-work__image--parrot">
                         <img src="/src/assets/img/png/rabbit-small.webp" alt="rabbit image">
                      </figure>
@@ -133,7 +133,7 @@
                         </p>
                      </div>
                   </article>
-                  <article class="work__item item-work">
+                  <article class="work__item item-work anim-child">
                      <figure class="item-work__image item-work__image--parrot">
                         <img src="/src/assets/img/png/dog-jump.webp" alt="dog jumping image">
                      </figure>
@@ -263,13 +263,71 @@
             </div>
          </section>
 
+         <section class="page__wild wild">
+            <div class="wild__container">
+               <div class="wild__header">
+                  <h2 class="wild__title">In the Wild</h2>
+                  <div class="wild__text">
+                     <p>In The Wild is a collection of pieces to help close the communication gap, while growing the
+                        love (and understanding)
+                        between you and your best pal.
+                     </p>
+                  </div>
+               </div>
+               <div class="wild__body body-wild">
+                  <article class="body-wild__item item-wild">
+                     <a href="#" class="item-wild__inner">
+                        <figure class="item-wild__image">
+                           <img src="/src/assets/img/img/wild-img-01.webp" alt="image cart">
+                        </figure>
+                        <div class="item-wild__content">
+                           <time class="item-wild__time" datetime="2021-05-03">May 3, 2021</time>
+                           <h3 class="item-wild__title">What is compounding?</h3>
+                           <div class="item-wild__text">
+                              <p>Compounding is the art and science of preparing personalized medications.</p>
+                           </div>
+                           <span class="item-wild__link">Read the article</span>
+                        </div>
+                     </a>
+                  </article>
+                  <article class="body-wild__item item-wild">
+                     <a href="#" class="item-wild__inner">
+                        <figure class="item-wild__image">
+                           <img src="/src/assets/img/img/wild-img-02.webp" alt="image cart">
+                        </figure>
+                        <div class="item-wild__content">
+                           <time class="item-wild__time" datetime="2021-06-15">June 15, 2021</time>
+                           <h3 class="item-wild__title">Anxiety in Pets</h3>
+                           <div class="item-wild__text">
+                              <p>An interview with a top behavioral specialist in NYC.</p>
+                           </div>
+                           <span class="item-wild__link">Read the article</span>
+                        </div>
+                     </a>
+                  </article>
+               </div>
+               <a href="#" type="button" class="wild__button button">View more</a>
+            </div>
+         </section>
+
          <div class="page__partners partners">
-            <div class="partners__container">
-               <img src="/src/assets/icons/partner-01.svg" alt="logo patner's company" class="partners__image">
-               <img src="/src/assets/icons/partner-02.svg" alt="logo patner's company" class="partners__image">
-               <img src="/src/assets/icons/partner-03.svg" alt="logo patner's company" class="partners__image">
-               <img src="/src/assets/icons/partner-04.svg" alt="logo patner's company" class="partners__image">
-               <img src="/src/assets/icons/partner-05.svg" alt="logo patner's company" class="partners__image">
+            <div class="partners__container partners__container--anim" data-threshold="0.1" data-delay="200"
+               data-step="200">
+               <a href="#" class="partners__link anim-child">
+                  <img src="/src/assets/icons/partner-01.svg" alt="logo patner's company" class="partners__image">
+               </a>
+               <a href="#" class="partners__link anim-child">
+                  <img src="/src/assets/icons/partner-02.svg" alt="logo patner's company" class="partners__image">
+               </a>
+               <a href="#" class="partners__link anim-child">
+                  <img src="/src/assets/icons/partner-03.svg" alt="logo patner's company" class="partners__image">
+               </a>
+               <a href="#" class="partners__link anim-child">
+                  <img src="/src/assets/icons/partner-04.svg" alt="logo patner's company" class="partners__image">
+               </a>
+               <a href="#" class="partners__link anim-child">
+                  <img src="/src/assets/icons/partner-05.svg" alt="logo patner's company" class="partners__image">
+               </a>
             </div>
          </div>
       </main>
@@ -277,70 +335,70 @@
       <footer class="footer">
          <div class="footer__body body-footer">
             <div class="body-footer__container">
-               <div class="body-footer__column column-menu" data-accordion>
-                  <div class="column-menu__header footer-header">
-                     <h4 class="column-menu__title title">Quick Links</h4>
-                     <div class="column-menu__icon icon-more" data-accordion-btn></div>
+               <div class="body-footer__column column-footer" data-accordion>
+                  <div class="column-footer__header">
+                     <h4 class="column-footer__title title">Quick Links</h4>
+                     <div class="column-footer__icon icon-more" data-accordion-btn></div>
                   </div>
-                  <ul class="column-menu__list" data-accordion-body>
-                     <li class="column-menu__item">
-                        <a href="#" class="column-menu__link">Veterinarians</a>
+                  <ul class="column-footer__list column-footer__list--accordion" data-accordion-body>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Veterinarians</a>
                      </li>
-                     <li class="column-menu__item">
-                        <a href="#" class="column-menu__link">Products</a>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Products</a>
                      </li>
-                     <li class="column-menu__item">
-                        <a href="#" class="column-menu__link">How it Works</a>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">How it Works</a>
                      </li>
-                     <li class="column-menu__item">
-                        <a href="#" class="column-menu__link">About us</a>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">About us</a>
                      </li>
-                     <li class="column-menu__item">
-                        <a href="#" class="column-menu__link">Blog</a>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Blog</a>
                      </li>
-                     <li class="column-menu__item">
-                        <a href="#" class="column-menu__link">Shop</a>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Shop</a>
                      </li>
-                     <li class="column-menu__item">
-                        <a href="#" class="column-menu__link">Careers</a>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Careers</a>
                      </li>
-                     <li class="column-menu__item">
-                        <a href="#" class="column-menu__link">Veterinarian login</a>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Veterinarian login</a>
                      </li>
-                     <li class="column-menu__item">
-                        <a href="#" class="column-menu__link">Contact us</a>
+                     <li class="column-footer__item">
+                        <a href="#" class="column-footer__link">Contact us</a>
                      </li>
                   </ul>
                </div>
-               <div class="body-footer__column column-contacts" data-accordion>
-                  <div class="column-menu__header footer-header">
-                     <h4 class="column-menu__title title">Call or Text</h4>
-                     <div class="column-menu__icon icon-more" data-accordion-btn></div>
+               <div class="body-footer__column column-footer" data-accordion>
+                  <div class="column-footer__header">
+                     <h4 class="column-footer__title title">Call or Text</h4>
+                     <div class="column-footer__icon icon-more" data-accordion-btn></div>
                   </div>
-                  <div class="column-contacts__wrapper" data-accordion-body>
-                     <a href="phone:8889014480" class="column-contacts__phone">(888) 901-4480</a>
-                     <div class="column-contacts__wrap">
-                        <span class="column-contacts__label">Email</span>
-                        <a href="mailto:hello@mixlabrx.com" class="column-contacts__email">hello@mixlabrx.com</a>
+                  <div class="column-footer__wrapper column-footer__wrapper--accordion" data-accordion-body>
+                     <a href="phone:8889014480" class="column-footer__phone">(888) 901-4480</a>
+                     <div class="column-footer__wrap">
+                        <span class="column-footer__label">Email</span>
+                        <a href="mailto:hello@mixlabrx.com" class="column-footer__email">hello@mixlabrx.com</a>
                      </div>
-                     <div class="column-contacts__wrap">
-                        <span class="column-contacts__label">Fax</span>
-                        <a href="phone:2129670892" class="column-contacts__phone">(212) 967-0892</a>
+                     <div class="column-footer__wrap">
+                        <span class="column-footer__label">Fax</span>
+                        <a href="phone:2129670892" class="column-footer__phone">(212) 967-0892</a>
                      </div>
                   </div>
                </div>
-               <div class="body-footer__column column-address" data-accordion>
-                  <div class="column-menu__header footer-header">
-                     <h4 class="column-menu__title title">New York City</h4>
-                     <div class="column-menu__icon icon-more" data-accordion-btn></div>
+               <div class="body-footer__column column-footer" data-accordion>
+                  <div class="column-footer__header">
+                     <h4 class="column-footer__title title">New York City</h4>
+                     <div class="column-footer__icon icon-more" data-accordion-btn></div>
                   </div>
-                  <div class="column-address__wrapper" data-accordion-body>
-                     <address class="column-address__address">
+                  <div class="column-footer__wrapper column-footer__wrapper--accordion" data-accordion-body>
+                     <address class="column-footer__address">
                         <a href="#
-                        " class="column-address__link">
+                        " class="column-footer__link column-footer__link--address">
                            336 West 37th St, Suite 850, New York, NY 10018</a>
                      </address>
-                     <table class="column-address__schedule">
+                     <table class="column-footer__schedule">
                         <tbody>
                            <tr>
                               <th>Mon-Sat</th>
@@ -354,18 +412,18 @@
                      </table>
                   </div>
                </div>
-               <div class="body-footer__column column-address" data-accordion>
-                  <div class="column-menu__header footer-header">
-                     <h4 class="column-menu__title title">Los Angeles</h4>
-                     <div class="column-menu__icon icon-more" data-accordion-btn></div>
+               <div class="body-footer__column column-footer" data-accordion>
+                  <div class="column-footer__header">
+                     <h4 class="column-footer__titl title">Los Angeles</h4>
+                     <div class="column-footer__icon icon-more" data-accordion-btn></div>
                   </div>
-                  <div class="column-address__wrapper" data-accordion-body>
-                     <address class="column-address__address">
-                        <a href="#" class="column-address__link">
+                  <div class="column-footer__wrapper column-footer__wrapper--accordion" data-accordion-body>
+                     <address class="column-footer__address">
+                        <a href="#" class="column-footer__link column-footer__link--address">
                            2223 Federal Ave, Los Angeles, CA 90064
                         </a>
                      </address>
-                     <table class="column-address__schedule">
+                     <table class="column-footer__schedule">
                         <tbody>
                            <tr>
                               <th>Mon-Sat</th>
@@ -379,11 +437,11 @@
                      </table>
                   </div>
                </div>
-               <div class="body-footer__column column-social">
-                  <div class="column-menu__header footer-header">
-                     <h4 class="column-menu__title title">Social</h4>
+               <div class="body-footer__column column-footer">
+                  <div class="column-footer__header">
+                     <h4 class="column-footer__title title">Social</h4>
                   </div>
-                  <ul class="column-social__items">
+                  <ul class="column-footer__items column-social">
                      <li class="column-social__item">
                         <a href="#" class="column-social__link column-social__link--icon-instagram"></a>
                      </li>
