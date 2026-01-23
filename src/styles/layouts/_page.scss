@@ -101,7 +101,6 @@
         background: url("/src/assets/img/png/rabbit.webp") 0 0 / 100% no-repeat ;
         @include adaptiveValue('width', 350,250);
         @include adaptiveValue('height',254,200);
-        animation: bounce 0.8s forwards infinite;
 
         @media (max-width: toEm(570)) {
          translate: -50% 0;

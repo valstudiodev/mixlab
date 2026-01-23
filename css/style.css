@@ -745,8 +745,6 @@ html[data-input=mouse] .list-bottom__link:hover {
   bottom: -90%;
   left: 50%;
   background: url("/src/assets/img/png/rabbit.webp") 0 0/100% no-repeat;
-  -webkit-animation: bounce 0.8s forwards infinite;
-          animation: bounce 0.8s forwards infinite;
 }
 @media (min-width: 73.125em) {
   .hero__inner::after {
